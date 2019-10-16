@@ -2,7 +2,7 @@
 
 ## 来源
 
-根据fork的gaosi的项目使用laravel进行学习重写
+根据fork的gaosi的项目使用laravel6.0进行学习重写
 
 
 ## 实现功能
