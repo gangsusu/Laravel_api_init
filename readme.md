@@ -23,9 +23,9 @@
 
 - horizon管理异步队列
 
--添加php_cs格式化代码
+- 添加php_cs格式化代码
 
--开发环境使用laravel-log-viewer
+- 开发环境使用laravel-log-viewer
 
 ## 环境
 

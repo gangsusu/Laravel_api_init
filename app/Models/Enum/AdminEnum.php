@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models\Enum;
+
 class AdminEnum
 {
     // 状态类别
@@ -8,8 +9,9 @@ class AdminEnum
     const NORMAL = 0; //正常
     const FREEZE = 1; //冻结
 
-    public static function getStatusName($status){
-        switch ($status){
+    public static function getStatusName($status)
+    {
+        switch ($status) {
             case self::INVALID:
                 return '已删除';
             case self::NORMAL:

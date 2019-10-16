@@ -1,16 +1,8 @@
 <?php
 
-/*
- * This file is part of jwt-auth.
- *
- * (c) Sean Tymon <tymon148@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | JWT Authentication Secret
@@ -45,7 +37,6 @@ return [
     */
 
     'keys' => [
-
         /*
         |--------------------------------------------------------------------------
         | Public Key
@@ -82,7 +73,6 @@ return [
         */
 
         'passphrase' => env('JWT_PASSPHRASE'),
-
     ],
 
     /*
@@ -265,7 +255,6 @@ return [
     */
 
     'providers' => [
-
         /*
         |--------------------------------------------------------------------------
         | JWT Provider
@@ -298,7 +287,5 @@ return [
         */
 
         'storage' => Tymon\JWTAuth\Providers\Storage\Illuminate::class,
-
     ],
-
 ];

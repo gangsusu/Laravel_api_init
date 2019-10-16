@@ -13,13 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
 Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
     Route::middleware('api.guard')->group(function () {
         //用户注册
         Route::post('/users', 'UserController@store')->name('users.store');
         //用户登录
-        Route::post('/login', 'UserController@login')->name('users.login');
-
+        Route::post('/user/login', 'UserController@login')->name('users.login');
         Route::middleware('api.refresh')->group(function () {
             //当前用户信息
             Route::get('/users/info', 'UserController@info')->name('users.info');
@@ -31,6 +34,7 @@ Route::namespace('Api')->prefix('v1')->middleware('cors')->group(function () {
             Route::get('/logout', 'UserController@logout')->name('users.logout');
         });
     });
+
     Route::middleware('admin.guard')->group(function () {
         //管理员注册
         Route::post('/admins', 'AdminController@store')->name('admins.store');

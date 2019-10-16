@@ -4,7 +4,7 @@ namespace App\Http\Middleware\Api;
 
 use Closure;
 
-class AdminGuardMiddleware
+class ApiGuardMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class AdminGuardMiddleware
      */
     public function handle($request, Closure $next)
     {
-        config(['auth.defaults.guard' => 'admin']);
+        config(['auth.defaults.guard' => 'api']);
 
         return $next($request);
     }

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -44,11 +43,12 @@ return [
         'api' => [
             'driver' => 'jwt',
             'provider' => 'users',
+            'hash' => false,
         ],
-
         'admin' => [
             'driver' => 'jwt',
             'provider' => 'admins',
+            'hash' => false,
         ],
     ],
 
@@ -78,6 +78,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -107,4 +108,16 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Password Confirmation Timeout
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define the amount of seconds before a password confirmation
+    | times out and the user is prompted to re-enter their password via the
+    | confirmation screen. By default, the timeout lasts for three hours.
+    |
+    */
+
+    'password_timeout' => 10800,
 ];
