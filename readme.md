@@ -2,11 +2,8 @@
 
 ## 来源
 
-配置过程以及配置原理都来自我的博客:[手摸手教你让Laravel开发Api更得心应手](https://www.guaosi.com/2019/02/26/laravel-api-initialization-preparation/)
+根据fork的gaosi的项目使用laravel进行学习重写
 
-这里是方便懒人下载，快速搭建，不需要再重新配置一遍。
-
-目前使用的`Laravel`版本是`5.7`
 
 ## 实现功能
 
@@ -26,11 +23,15 @@
 
 - horizon管理异步队列
 
+-添加php_cs格式化代码
+
+-开发环境使用laravel-log-viewer
+
 ## 环境
 
 | 程序 | 版本 |
 | -------- | -------- |
-| PHP| `>= 7.1` |
+| PHP| `>= 7.2` |
 | MySQL| `>= 5.5` |
 | Redis| `>= 2.8` |
 
