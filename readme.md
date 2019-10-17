@@ -40,7 +40,7 @@
 1.先把项目克隆到本地
 
 ```
-git clone git@github.com:guaosi/Laravel_api_init.git
+git clone https://github.com/gangsusu/Laravel_api_init.git
 ```
 
 2.打开项目目录，下载依赖扩展包
