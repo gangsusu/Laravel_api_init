@@ -26,9 +26,6 @@ class ExceptionReport
      */
     public $request;
 
-    /**
-     * @var array
-     */
     //当抛出这些异常时，可以使用我们定义的错误信息与HTTP状态码
     //可以把常见异常放在这里
     public $doReport = [
@@ -40,12 +37,8 @@ class ExceptionReport
         TokenInvalidException::class => ['token不正确', 400],
         NotFoundHttpException::class => ['没有找到该页面', 404],
         MethodNotAllowedHttpException::class => ['访问方式不正确', 405],
-        QueryException::class => ['参数错误', 401],
     ];
 
-    /**
-     * @var
-     */
     protected $report;
 
     /**

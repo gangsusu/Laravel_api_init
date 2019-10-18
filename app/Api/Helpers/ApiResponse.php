@@ -20,12 +20,6 @@ trait ApiResponse
         return $this->statusCode;
     }
 
-    /**
-     * @param $statusCode
-     * @param null|mixed $httpCode
-     *
-     * @return $this
-     */
     public function setStatusCode($statusCode, $httpCode = null)
     {
         $httpCode = $httpCode ?? $statusCode;
@@ -34,24 +28,11 @@ trait ApiResponse
         return $this;
     }
 
-    /**
-     * @param $data
-     * @param array $header
-     *
-     * @return mixed
-     */
     public function respond($data, $header = [])
     {
         return Response::json($data, $this->getStatusCode(), $header);
     }
 
-    /**
-     * @param $status
-     * @param array $data
-     * @param null  $code
-     *
-     * @return mixed
-     */
     public function status($status, array $data, $code = null)
     {
         if ($code) {
@@ -67,13 +48,6 @@ trait ApiResponse
         return $this->respond($data);
     }
 
-    /**
-     * @param $message
-     * @param int    $code
-     * @param string $status
-     *
-     * @return mixed
-     */
     /*
      * 格式
      * data:
@@ -86,12 +60,6 @@ trait ApiResponse
         return $this->setStatusCode($code)->message($message, $status);
     }
 
-    /**
-     * @param $message
-     * @param string $status
-     *
-     * @return mixed
-     */
     public function message($message, $status = 'success')
     {
         return $this->status($status, [
@@ -99,21 +67,11 @@ trait ApiResponse
         ]);
     }
 
-    /**
-     * @param string $message
-     *
-     * @return mixed
-     */
     public function internalError($message = 'Internal Error!')
     {
         return $this->failed($message, FoundationResponse::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * @param string $message
-     *
-     * @return mixed
-     */
     public function created($message = 'created')
     {
         return $this->setStatusCode(FoundationResponse::HTTP_CREATED)
@@ -121,22 +79,11 @@ trait ApiResponse
         ;
     }
 
-    /**
-     * @param $data
-     * @param string $status
-     *
-     * @return mixed
-     */
     public function success($data, $status = 'success')
     {
         return $this->status($status, compact('data'));
     }
 
-    /**
-     * @param string $message
-     *
-     * @return mixed
-     */
     public function notFond($message = 'Not Fond!')
     {
         return $this->failed($message, Foundationresponse::HTTP_NOT_FOUND);
