@@ -7,6 +7,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -95,9 +96,9 @@ class ExceptionReport
     public function report()
     {
         if ($this->exception instanceof ValidationException) {
-            $error = array_first($this->exception->errors());
+            $error = Arr::first($this->exception->errors());
 
-            return $this->failed(array_first($error), $this->exception->status);
+            return $this->failed(Arr::first($error), $this->exception->status);
         }
         $message = $this->doReport[$this->report];
 
