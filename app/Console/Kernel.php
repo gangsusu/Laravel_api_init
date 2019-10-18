@@ -19,19 +19,17 @@ class Kernel extends ConsoleKernel
      * Define the application's command schedule.
      *
      * @param \Illuminate\Console\Scheduling\Schedule $schedule
-     *
-     * @return void
      */
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('backup:clean --disable-notifications')->daily()->at('10:00');
+        $schedule->command('backup:run --only-files --disable-notifications')->hourly(); //每过一小时备份一次
     }
 
     /**
      * Register the commands for the application.
-     *
-     * @return void
      */
     protected function commands()
     {
