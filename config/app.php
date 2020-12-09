@@ -168,6 +168,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Illuminate\Translation\TranslationServiceProvider::class,
         Overtrue\LaravelLang\TranslationServiceProvider::class,
     ],
 
