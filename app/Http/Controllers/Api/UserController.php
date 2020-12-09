@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\UserRequest;
 use App\Http\Resources\Api\UserResource;
 use App\Jobs\Api\SaveLastTokenJob;
+use App\Jobs\Queue;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +69,20 @@ class UserController extends Controller
     //返回当前登录用户信息
     public function info()
     {
+
+        $arr = [
+            ['id' => 1, 'title' => '张三'],
+            ['id' => 2, 'title' => '李四'],
+            ['id' => 3, 'title' => '王五'],
+        ];
+
+        foreach ($arr as $v) {
+            $queue = new Queue($v['id'], $v['title']);
+            $this->dispatch($queue);
+        }
+
+        return response(0, '200');
+
         $user = Auth::user();
 
         return $this->success(new UserResource($user));
