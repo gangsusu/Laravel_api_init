@@ -69,7 +69,7 @@ class UserController extends Controller
     //返回当前登录用户信息
     public function info()
     {
-
+//        1/0;
         $arr = [
             ['id' => 1, 'title' => '张三'],
             ['id' => 2, 'title' => '李四'],
